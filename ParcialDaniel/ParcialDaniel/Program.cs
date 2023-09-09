@@ -1,5 +1,6 @@
 using data;
 using data.repositorio;
+using ParcialDaniel.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,7 @@ builder.Services.AddSwaggerGen();
 var connection = new mysqlConfig(builder.Configuration.GetConnectionString("mysqlConnection"));
 builder.Services.AddSingleton(connection);
 builder.Services.AddScoped<iClienteRepository, clienteRepository>();
+builder.Services.AddScoped<iEmpleadoRepository, empleadoRepository>();
 //builder.Services.AddScoped<>();
 //builder.Services.AddScoped<>();
 var app = builder.Build();
