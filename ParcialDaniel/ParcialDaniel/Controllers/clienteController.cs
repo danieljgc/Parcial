@@ -41,5 +41,23 @@ namespace ParcialDaniel.Controllers
             bool created = await _clienteRepository.insertCliente(cliente);
             return Ok(created);
         }
+
+        [HttpPut]
+        public async Task <IActionResult> UpdateCliente([FromBody] cliente cliente)
+        {
+            if (cliente == null)
+            {
+                return BadRequest();
+            }
+            
+            bool update = await _clienteRepository.updateCliente(cliente);
+            return Ok(update);
+        }
+
+        [HttpDelete]
+        public async Task<ActionResult>DeleteClienteById(int id)
+        {
+            return Ok(await _clienteRepository.deleteCliente(id));
+        }
     }
 }

@@ -21,9 +21,12 @@ namespace data.repositorio
             return new MySqlConnection(_connection._connectionString);
         }
 
-        public Task<bool> deleteCliente(int id)
+        public async Task<bool> deleteCliente(int id)
         {
-            throw new NotImplementedException();
+            var db = dbConnection();
+            var sql = @"delete from cliente where idCliente=@Id";
+            var result = await db.ExecuteAsync(sql, new { id });
+            return result > 0;
         }
 
         public Task<cliente> getClienteById(int id)
@@ -48,9 +51,15 @@ namespace data.repositorio
             return result > 0;
         }
 
-        public Task<bool> updateCliente(cliente cliente)
+        public async Task<bool> updateCliente(cliente cliente)
         {
-            throw new NotImplementedException();
+            var db = dbConnection();
+            var sql = @"update cliente set
+                        Nombre=@Nombre,
+                        Documento=@Documento
+                        where (idCliente=@IdCliente)";
+            var result = await db.ExecuteAsync(sql, new { cliente.Nombre, cliente.Documento, cliente.idCliente});
+            return result > 0;
         }
         
     }
