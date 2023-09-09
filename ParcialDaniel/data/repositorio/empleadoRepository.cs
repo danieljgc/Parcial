@@ -21,9 +21,12 @@ namespace data.repositorio
             return new MySqlConnection(_connection._connectionString);
         }
 
-        public Task<bool> deleteEmpleado(int id)
+        public async Task<bool> deleteEmpleado(int id)
         {
-            throw new NotImplementedException();
+            var db = dbConnection();
+            var sql = @"delete from empleado where idEmpleado=@Id";
+            var result = await db.ExecuteAsync(sql, new { id });
+            return result > 0;
         }
 
         public Task<empleado> getEmpleadoById(int id)

@@ -56,5 +56,11 @@ namespace ParcialDaniel.Controllers
             bool update = await _empleadoRepository.updateEmpleado(empleado);
             return Ok(update);
         }
+
+        [HttpDelete]
+        public async Task<ActionResult>DeleteEmpleado(int id)
+        {
+            return Ok(await _empleadoRepository.deleteEmpleado(id));
+        }
     }
 }
