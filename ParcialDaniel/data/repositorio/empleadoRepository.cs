@@ -28,12 +28,16 @@ namespace data.repositorio
 
         public Task<empleado> getEmpleadoById(int id)
         {
-            throw new NotImplementedException();
+            var db = dbConnection();
+            var consulta = @"select * from empleado where idEmpleado=@Id";
+            return db.QueryFirstOrDefaultAsync<empleado>(consulta, new { Id = id });
         }
 
         public Task<IEnumerable<empleado>> getEmpleados()
         {
-            throw new NotImplementedException();
+            var db = dbConnection();
+            var consulta = @"select * from empleado";
+            return db.QueryAsync<empleado>(consulta);
         }
 
         public async Task<bool> insertEmpleado(empleado empleado)
