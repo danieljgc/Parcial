@@ -5,6 +5,10 @@ VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcialDaniel", "ParcialDaniel\ParcialDaniel.csproj", "{5227D71C-D080-4C58-9A3F-0B6DEF6FEC11}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "model", "model\model.csproj", "{4E9053BE-6428-421C-90B2-A67D89DE4083}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "data", "data\data.csproj", "{910093E9-816B-49A3-BAB0-32A47A10BE88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5227D71C-D080-4C58-9A3F-0B6DEF6FEC11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5227D71C-D080-4C58-9A3F-0B6DEF6FEC11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5227D71C-D080-4C58-9A3F-0B6DEF6FEC11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E9053BE-6428-421C-90B2-A67D89DE4083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E9053BE-6428-421C-90B2-A67D89DE4083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E9053BE-6428-421C-90B2-A67D89DE4083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E9053BE-6428-421C-90B2-A67D89DE4083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{910093E9-816B-49A3-BAB0-32A47A10BE88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{910093E9-816B-49A3-BAB0-32A47A10BE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{910093E9-816B-49A3-BAB0-32A47A10BE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{910093E9-816B-49A3-BAB0-32A47A10BE88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
