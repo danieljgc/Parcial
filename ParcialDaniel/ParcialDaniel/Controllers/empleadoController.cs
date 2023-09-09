@@ -41,5 +41,20 @@ namespace ParcialDaniel.Controllers
             bool created = await _empleadoRepository.insertEmpleado(empleado);
             return Ok(created);
         }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateEmpleado([FromBody] empleado empleado)
+        {
+            if (empleado == null)
+            {
+                return BadRequest();
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            bool update = await _empleadoRepository.updateEmpleado(empleado);
+            return Ok(update);
+        }
     }
 }
