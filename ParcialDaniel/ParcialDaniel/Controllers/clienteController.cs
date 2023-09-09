@@ -14,6 +14,19 @@ namespace ParcialDaniel.Controllers
         {
             _clienteRepository = clienteRepository;
         }
+
+        [HttpGet]
+        public async Task<IActionResult> getClientes()
+        {
+            return Ok(await _clienteRepository.getClientes());
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> getClientebyId(int id)
+        {
+            return Ok(await _clienteRepository.getClienteById(id));
+        }
+
         [HttpPost]
         public async Task<IActionResult> InsertCliente([FromBody] cliente cliente)
         {

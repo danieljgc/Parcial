@@ -28,12 +28,16 @@ namespace data.repositorio
 
         public Task<cliente> getClienteById(int id)
         {
-            throw new NotImplementedException();
+            var db = dbConnection();
+            var consulta = @"select * from cliente where idCliente=@Id";
+            return db.QueryFirstOrDefaultAsync<cliente>(consulta, new { Id = id });
         }
 
         public Task<IEnumerable<cliente>> getClientes()
         {
-            throw new NotImplementedException();
+            var db = dbConnection();
+            var consulta = @"select * from cliente";
+            return db.QueryAsync<cliente>(consulta);
         }
 
         public async Task<bool> insertCliente(cliente cliente)
