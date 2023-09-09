@@ -53,11 +53,11 @@ namespace ParcialDaniel.Controllers
             bool update = await _clienteRepository.updateCliente(cliente);
             return Ok(update);
         }
-
         [HttpDelete]
-        public async Task<ActionResult>DeleteClienteById(int id)
+        public async Task<ActionResult> DeleteClienteById(int id)
         {
             return Ok(await _clienteRepository.deleteCliente(id));
         }
+
     }
 }
